@@ -1,0 +1,219 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='workphone.')
+    meta(name='keywords', content='workphone')
+    title 海云安全手机
+    link(rel='shortcut icon', href='images/logo.png')
+    link(type='text/css', rel='stylesheet', href='style/reset.css')
+    link(rel='stylesheet', type='text/css', href='jquery-ui-1.8.23.custom/css/ui-lightness/jquery-ui-1.8.23.custom.css')
+    link(type='text/css', rel='stylesheet', href='jqueryCustom/jquery.mCustomScrollbar.css')
+    link(type='text/css', rel='stylesheet', href='style/admin.css')
+    link(type='text/css', rel='stylesheet', href='style/vinput.css')
+    link(type='text/css', rel='stylesheet', href='style/setLDAP.css')
+    link(type="text/css", rel="stylesheet", href="style/jquery.Jcrop.css")
+    script(type='text/javascript', src='script/modernizr+2.0.3.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js')
+    script(type='text/javascript', src='script/setCookie.js')
+    script(type='text/javascript', src='jqueryCustom/jquery.mCustomScrollbar.concat.min.js')
+    script(type='text/javascript', src='script/jquery.Jcrop.js')
+    script(type='text/javascript', src='script/main.js')
+  body
+    #wrap
+      header
+        // 头部
+        a#toplogo
+          img(src='images/logo_ad.png', alt='', height='45')
+        nav#top
+          ul
+            // 头部的连接
+            li
+              a.navHover(href='/f_org_acc') 账户
+            li
+              a(href='/f_org_home') 设备管理
+            li
+              a(href='/f_org_strategy') 策略配置
+            li
+              a(href='/f_org_contacts') 同步联系人
+            li
+              a(href='/f_org_mapp') 应用管理
+            li
+              a(href='/f_org_trace') 丢失溯源
+            li
+              a(href='/f_org_setLDAP') LDAP配置
+            li
+              a#logout(href='#') 退出
+      aside
+        // 边栏
+        h4.asideH.hf.txt_center
+          img.kao(src='images/wp.jpg', width='20', height='20', alt='logo', style='margin-right:10px')
+          账户设置
+        ul.asideU
+          li
+            a.tab.hover(href='#glzl') 管理员资料
+          li
+            a.tab(href='#addgly') 添加管理员
+          li
+            a.tab(href='#addyh') 添加用户
+      article#acc
+        section#glzl.youxin
+          h4.hf 管理员资料
+          .ct
+            #leftContainer
+              #face.xm
+                img.face(src='images/face.png')
+              #buttonLine
+                a#changeFaceHref.cb(href="#")
+                button#changeFace 修改头像
+
+            #rightContainer
+                #dn.xm
+                  a.ra(href='javascript:;') 修改密码
+                  p.xsd
+                    span.tou 登入名
+                    span#adName.xiang
+                  .yc
+                    form#xmim
+                      p
+                        label(for='dma') 当前密码
+                        input#dma(type='password', name='dma')
+                      p
+                        label(for='xma') 新密码
+                        input#xma(type='password', name='xma')
+                      p
+                        label(for='qxma') 确认新密码
+                        input#qxma(type='password', name='qxma')
+                      p.an.txt_center
+                        button(type='submit') 保存
+                        button.err(type='button') 关闭
+                #qx.xm
+                  p.xsd
+                    span.tou 管理权限
+                    span#adminqx.xiang
+
+        section#addgly.youxin
+          h4.hf 添加管理员
+          .ct
+            form#addmanager
+                #addglnm.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='xzh') 管理员账号名
+                      input#xzh(type='text', name='xzh')
+                #addglpw1.xm
+                  .yc(style='display:block;border-top: 0px;border:1px solid # ')
+                    p
+                      label(for='xzhmm1') 账户密码
+                      input#xzhmm1(type='password', name='xzhmm1')
+                #addglpw2.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='xzhmm2') 确认密码
+                      input#xzhmm2(type='password', name='xzhmm2')
+                #addglqx.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='xzhqx') 账户权限
+                      select#xzhqx(type='text', name='xzhqx')
+                button#addglysend.ra(type='submit') 提交
+        section#addyh.youxin
+          h4.hf 添加用户
+              button#exceldap(type='button') 批量导入用户
+          .ct
+            form#adduser
+                #addnm.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='uname') 姓名
+                      input#uname(type='text', name='uname')
+                #addemail.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='umail') 邮箱
+                      input#umail(type='text', name='umail')
+                //#addpw1.xm
+                //  .yc(style='display:block;border-top: 0px;')
+                //    p
+                //      label(for='upw1') 密码
+                //      input#upw1(type='password', name='upw1')
+                //#addpw2.xm
+                //  .yc(style='display:block;border-top: 0px;')
+                //    p
+                //      label(for='upw2') 确认密码
+                //      input#upw2(type='password', name='upw2')
+                #addphone.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='uphone') 手机号码
+                      input#uphone(type='text', name='uphone')
+                #addzhiw.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='uzhiw') 职位
+                      select#uzhiw(type='text', name='uzhiw')
+                        option(value='无')无
+                        option(value='所长')所长
+                        option(value='副所长')副所长
+                        option(value='局长')局长
+                        option(value='副局长')副局长
+                        option(value='主任')主任
+                        option(value='副主任')副主任
+                        option(value='组长')组长
+                        option(value='副组长')副组长
+                #addzhic.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='uzhic') 职称
+                      select#uzhic(type='text', name='uzhic')
+                        option(value='无')无
+                        option(value='正高级工程师')正高级工程师
+                        option(value='研究员')研究员
+                        option(value='副研究员')副研究员
+                        option(value='高级工程师')高级工程师
+                        option(value='工程师')工程师
+                        option(value='助理研究员')助理研究员
+                        option(value='助理工程师')助理工程师
+
+                #addou.xm
+                  .yc(style='display:block;border-top: 0px;')
+                    p
+                      label(for='uldapou') 所属部门
+                      span#addbm
+                        select#uldapou(type='text', name='uldapou')
+                button#addumes(type='submit') 提交
+    .upexcel
+        .tit
+          span.x X
+          h6#udetou 批量上传用户信息
+        form#upcel(name='upcel', target='sub', method='post', action='/f_upcel', enctype="multipart/form-data")
+          .bkq
+            p 仅支持Excel格式导入，请点击以下链接下载用户信息模板，按要求填写完成后进行上传！
+            p
+              a#downexcel(charset='utf-8',href='http://111.204.189.58:8083/download/excelmodel/用户信息模板.xls')点击下载“用户信息模板.xls”
+            p.nat
+                label(for='excels') 上传文件：
+                input#excels(type='text', name='excels')
+                input#excel(type='file', name='excel')
+            p.centerBtn
+                button(type='submit') 提交
+                button.err(type='button') 取消
+    #changeFaceDialog.dialog(title='修改头像',style="width:500px")
+        form#changeFaceForm
+          #photoContainer
+            img#faceNow
+            span#previewBox
+              img#cropPreview.jcrop-preview
+          #photoUploadContainer
+            input#uploadPhoto(type='file')
+          #btnContainer
+            button#uploadBtn.Lbtn(type='submit', name='urlSub') 上传
+            button#changeFaceBtn.Lbtn(type='submit', name='urlSub') 确定
+            button#changeFaceExit.Lbtn(type='button', name='urlExit') 取消
+
+    script(type='text/javascript', src='script/login_ad.js')
+    script(type='text/javascript', src='script/acc.js')
+    script(type='text/javascript', src='script/upexcel.js')
+    script(type='text/javascript', src='script/vinput.js')
+    iframe(name='sub', marginheight='0', width='0', height='0', frameborder='0', style='display:none;')
